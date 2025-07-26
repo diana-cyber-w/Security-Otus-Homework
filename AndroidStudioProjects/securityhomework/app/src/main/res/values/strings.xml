@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Security Homework</string>
+    <string name="email">Email</string>
+    <string name="password">Пароль</string>
+    <string name="biometric">Включить биометрию</string>
+    <string name="login">Войти</string>
 </resources>

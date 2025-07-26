@@ -14,18 +14,18 @@ class TokenRepository(context: Context) {
     fun saveToken(token: String) {
         val encrypted = securityHelper.encrypt(token, key)
         sharedPrefs.edit().apply {
-            putString("auth_token", encrypted)
+            putString("AUTH_TOKEN", encrypted)
             apply()
         }
     }
 
     fun getToken(): String? {
-        val encrypted = sharedPrefs.getString("auth_token", null)
+        val encrypted = sharedPrefs.getString("AUTH_TOKEN", null)
         return encrypted?.let { securityHelper.decrypt(it, key) }
     }
 
     fun clearToken() {
-        sharedPrefs.edit { remove("auth_token") }
+        sharedPrefs.edit { remove("AUTH_TOKEN") }
         keys.removeKeys("AUTH_TOKEN_KEY")
     }
 }
